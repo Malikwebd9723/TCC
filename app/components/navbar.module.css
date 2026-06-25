@@ -208,6 +208,18 @@
     width: 100%;
 }
 
+.closeBtn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: var(--gold-primary);
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
 .mobileLinks a {
     font-size: 1.5rem;
     text-transform: uppercase;

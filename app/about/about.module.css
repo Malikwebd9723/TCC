@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 90px;
 }
 
 .heroBg {
@@ -179,5 +180,24 @@
     .historyGrid, .founderCard {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    .founderImage img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 2.8rem;
+    }
+    .historyText h2, .founderText h2 {
+        font-size: 2rem;
+    }
+    .founderText p {
+        font-size: 1.1rem;
+    }
+    .values {
+        padding: 2rem;
     }
 }

@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 90px;
 }
 
 .heroBg {
@@ -187,8 +188,28 @@
     border-top: 1px solid var(--accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .benefitsGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .benefitImage img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 2.8rem;
+    }
+    .benefitText h2, .openings h2 {
+        font-size: 2rem;
+    }
+    .jobCard {
+        padding: 2rem;
+    }
+    .jobsGrid {
         grid-template-columns: 1fr;
     }
 }

@@ -25,9 +25,7 @@ body {
   scroll-behavior: smooth;
 }
 
-main {
-  padding-top: 90px;
-}
+/* Removed global padding-top to fix gap issue */
 
 h1,
 h2,
@@ -37,6 +35,21 @@ h4 {
   color: var(--gold-primary);
   text-transform: uppercase;
   letter-spacing: 2px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto; /* Allow hyphenation for long words like INFRASTRUCTURE */
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.3rem !important; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  .container { padding: 0 1rem; } /* Reduce side padding slightly for more width */
 }
 
 a {

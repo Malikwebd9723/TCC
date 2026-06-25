@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 90px;
 }
 
 .heroBg {
@@ -166,5 +167,21 @@
 @media (max-width: 1024px) {
     .contactGrid {
         grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 2.8rem;
+    }
+    .contactInfo h2 {
+        font-size: 2rem;
+    }
+    .method a, .method span {
+        font-size: 1.2rem;
+    }
+    .mapContainer {
+        height: 300px;
     }
 }

@@ -80,6 +80,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
+  padding-top: 90px;
 }
 
 .logoLarge {
@@ -187,8 +188,8 @@
 
 .serviceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
 }
 
 .serviceCard {
@@ -291,17 +292,24 @@
 @media (max-width: 1024px) {
     .introGrid, .aboutWrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
     .impactContent h2 {
         font-size: 3rem;
         letter-spacing: 5px;
     }
+    .introText h2 {
+        font-size: 2rem;
+    }
+    .introImage img, .aboutVisual img {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 4rem;
+  .heroContent h1 {
+    font-size: 3.5rem;
   }
   .navLinks {
     display: none;
@@ -309,5 +317,11 @@
   .heroCtas {
       flex-direction: column;
       gap: 1.5rem;
+  }
+  .introText h2 {
+      font-size: 1.8rem;
+  }
+  .impactContent h2 {
+      font-size: 2.2rem;
   }
 }
