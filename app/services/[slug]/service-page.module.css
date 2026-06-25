@@ -1,0 +1,135 @@
+.container {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.backNav {
+  margin-bottom: 4rem;
+}
+
+.backLink {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--gold-primary);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  color: var(--gold-primary);
+  margin: 0 auto 2rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background: var(--gold-primary);
+  margin: 0 auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.description {
+  padding: 3rem;
+}
+
+.description h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.description p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.features h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.features ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features li {
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.ctaSection {
+  padding: 4rem;
+  text-align: center;
+}
+
+.ctaSection h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.ctaContact {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ctaContact a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .ctaContact {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .ctaContact a {
+    font-size: 1.2rem;
+  }
+}
