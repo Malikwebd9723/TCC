@@ -1,0 +1,43 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 2rem 100px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.content {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.content h2 {
+  color: var(--gold-primary);
+  font-size: 1.5rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content ul {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.lastUpdated {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: block;
+}

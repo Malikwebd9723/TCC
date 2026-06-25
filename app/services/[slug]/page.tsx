@@ -1,6 +1,7 @@
 import { services } from "../../services-data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./service-page.module.css";
 
 interface PageProps {
@@ -55,11 +56,6 @@ export default async function ServicePage({ params }: PageProps) {
 
   return (
     <main className={styles.container}>
-      <nav className={styles.backNav}>
-        <Link href="/" className={styles.backLink}>
-          <span>&larr;</span> Back to Home
-        </Link>
-      </nav>
 
       <section className={styles.hero}>
         <div className={styles.iconWrapper}>{getIcon(service.iconName)}</div>
@@ -85,12 +81,23 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       </div>
 
+      <section className={styles.gallerySection}>
+        <h2 className="text-center gold-text">Work Gallery</h2>
+        <div className={styles.galleryGrid}>
+          {service.images.map((img, i) => (
+            <div key={i} className={styles.galleryItem}>
+              <Image src={img} alt={`${service.title} portfolio ${i}`} width={500} height={400} style={{ objectFit: "cover" }} />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className={`${styles.ctaSection} glass gold-border`}>
         <h3>Need {service.title} expertise?</h3>
         <p>Contact Danny DeSantis for a detailed consultation and estimate.</p>
         <div className={styles.ctaContact}>
           <a href="tel:3158794625" className="gold-text">(315) 879-4625</a>
-          <a href="mailto:tradecraftTCC@gmail.com">tradecraftTCC@gmail.com</a>
+          <a href="mailto:tradecraftTCC@gmail.com" className="gold-text">tradecraftTCC@gmail.com</a>
         </div>
       </section>
     </main>

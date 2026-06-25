@@ -44,23 +44,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* Navigation */}
-      <nav className={`${styles.nav} glass`}>
-        <div className={`container ${styles.navContent}`}>
-          <div className={styles.logoSmall}>
-            <svg width="30" height="30" viewBox="0 0 100 100">
-              <polygon points="50,15 90,85 10,85" fill="none" stroke="#d4af37" strokeWidth="8" />
-            </svg>
-            <span className="gold-text">TCC</span>
-          </div>
-          <div className={styles.navLinks}>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
@@ -85,91 +68,83 @@ export default function Home() {
           <p className={styles.slogan}>
             "It's simple... You Schedule, I Install, You're Happy, I Get Paid"
           </p>
-          <a href="#services" className={`${styles.cta} gold-border`}>
-            Explore Our Services
-          </a>
+          <div className={styles.heroCtas}>
+            <Link href="/services" className={`${styles.cta} gold-border`}>
+                Our Services
+            </Link>
+            <Link href="/contact" className={`${styles.ctaSecondary}`}>
+                Book a Consultation
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Featured Service Intro */}
+      <section className={`section-padding ${styles.featuredIntro}`}>
+          <div className="container">
+              <div className={styles.introGrid}>
+                  <div className={styles.introImage}>
+                      <Image src="/service-gc.png" alt="Excellence" width={600} height={500} style={{ objectFit: "cover" }} />
+                  </div>
+                  <div className={styles.introText}>
+                      <h2 className="gold-text">Crafting Infrastructure with Precision</h2>
+                      <p>
+                          Tradecraft Consulting & Contracting represents the pinnacle of professional trade services. 
+                          From high-voltage electrical arrays to complex HVAC climate controls, we deliver 
+                          solutions that exceed standard expectations.
+                      </p>
+                      <Link href="/about" className={styles.linkText}>Learn about our mission &rarr;</Link>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      {/* Services Grid Section */}
       <section id="services" className={`section-padding ${styles.services}`}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Our Specialized Services</h2>
+          <h2 className={styles.sectionTitle}>Specialized Solutions</h2>
           <div className={styles.serviceGrid}>
-            {services.map((service, index) => (
+            {services.slice(0, 3).map((service, index) => (
               <Link key={index} href={`/services/${service.slug}`} className={`${styles.serviceCard} glass`}>
                 <div className={styles.serviceIcon}>{getIcon(service.iconName)}</div>
                 <h3>{service.title}</h3>
                 <p>{service.shortDescription}</p>
-                <span className={styles.learnMore}>Learn More &rarr;</span>
+                <span className={styles.learnMore}>Explore Service &rarr;</span>
               </Link>
             ))}
           </div>
+          <div className="text-center" style={{ marginTop: '3rem' }}>
+            <Link href="/services" className={styles.viewAll}>View All Services</Link>
+          </div>
         </div>
       </section>
 
-      {/* Detailed About Section */}
-      <section id="about" className={`section-padding ${styles.aboutSectionBody}`}>
+      {/* High-Impact Image Break */}
+      <section className={styles.impactImage}>
+          <Image src="/about.png" alt="Craftsmanship" fill style={{ objectFit: "cover", opacity: 0.6 }} />
+          <div className={styles.impactContent}>
+              <h2 className="gold-text">Built to Last.</h2>
+          </div>
+      </section>
+
+      {/* Mini About/Team Section */}
+      <section className={`section-padding ${styles.teamIntro}`}>
         <div className="container">
           <div className={styles.aboutWrapper}>
             <div className={styles.aboutContent}>
-              <h2 className="gold-text">About Tradecraft Consulting & Contracting</h2>
-              <div className={styles.accentBar}></div>
+              <h2 className="gold-text">Danny DeSantis</h2>
               <p className={styles.mainAboutText}>
-                Founded by <strong>Danny DeSantis</strong>, Tradecraft Consulting & Contracting (TCC) is a premier provider of construction and technical consulting services. With a focus on high-precision installations and industrial-grade quality, we serve the <strong>Residential, Commercial, and Industrial</strong> sectors.
+                The vision behind TCC is centered on two principles: transparency and mastery. 
+                We remove the guesswork from contracting, providing a premium experience for every client.
               </p>
-              <p className={styles.secondaryAboutText}>
-                Our mission is to simplify the complex—providing clear schedules, professional installations, and guaranteed satisfaction. At TCC, we don't just build structures; we build trust through impeccable craftsmanship and transparent business practices. Whether it's a large-scale commercial HVAC overhaul or detailed residential electrical work, we bring the same level of excellence to every project.
-              </p>
-              <div className={styles.marketTags}>
-                <span>Residential Expertise</span>
-                <span>Commercial Excellence</span>
-                <span>Industrial Precision</span>
-              </div>
+              <Link href="/careers" className={`${styles.cta} gold-border`}>Join the Team</Link>
             </div>
             <div className={styles.aboutVisual}>
-                <div className={`${styles.experienceBox} gold-border glass`}>
-                    <span className={styles.expNumber}>20+</span>
-                    <span className={styles.expLabel}>Years of Master Craftsmanship</span>
-                </div>
+                <Image src="/careers.png" alt="Our Team" width={500} height={400} style={{ objectFit: "cover" }} />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Detailed Contact Section */}
-      <section id="contact" className={`section-padding ${styles.contactSectionBody}`}>
-        <div className="container">
-            <div className={`${styles.contactHero} glass gold-border`}>
-                <h2 className="gold-text">Get In Touch</h2>
-                <p>Available for consultations and estimates for your next high-priority project.</p>
-                <div className={styles.contactDetailsGrid}>
-                    <div className={styles.contactMethod}>
-                        <strong>Call or Text</strong>
-                        <a href="tel:3158794625" className={styles.contactLink}>(315) 879-4625</a>
-                    </div>
-                    <div className={styles.contactMethod}>
-                        <strong>Email Address</strong>
-                        <a href="mailto:tradecraftTCC@gmail.com" className={styles.contactLink}>tradecraftTCC@gmail.com</a>
-                    </div>
-                    <div className={styles.contactMethod}>
-                        <strong>Business Direction</strong>
-                        <span>Licensed & Insured Professional Services</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerContent}>
-            <p>&copy; {new Date().getFullYear()} Tradecraft Consulting & Contracting. All rights reserved.</p>
-            <p>Quality Workmanship | Professional Service</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

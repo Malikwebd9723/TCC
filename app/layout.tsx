@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   keywords: ["General Contracting", "Electrical", "Carpentry", "Plumbing", "HVAC", "Tradecraft Consulting", "TCC", "Danny DeSantis"],
 };
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

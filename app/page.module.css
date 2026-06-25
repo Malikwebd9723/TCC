@@ -114,10 +114,16 @@
   margin-bottom: 3rem;
 }
 
+.heroCtas {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
 .cta {
   padding: 1rem 2.5rem;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   transition: all 0.3s ease;
 }
@@ -125,6 +131,51 @@
 .cta:hover {
   background: var(--gold-primary);
   color: #000;
+}
+
+.ctaSecondary {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--gold-primary);
+    padding-bottom: 5px;
+}
+
+/* Featured Intro */
+.featuredIntro {
+    background: #050505;
+}
+
+.introGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.introImage img {
+    border: 1px solid var(--gold-primary);
+    padding: 10px;
+}
+
+.introText h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.introText p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.linkText {
+    color: var(--gold-primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
 /* Services */
@@ -141,10 +192,9 @@
 }
 
 .serviceCard {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   transition: transform 0.3s ease, border-color 0.3s ease;
-  display: block;
 }
 
 .serviceCard:hover {
@@ -168,139 +218,61 @@
   color: var(--text-muted);
   line-height: 1.6;
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.learnMore {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--gold-primary);
+.viewAll {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border: 1px solid var(--gold-primary);
+    padding: 1rem 3rem;
+    transition: all 0.3s ease;
 }
 
-/* About Section */
-.aboutSectionBody {
-  background: #050505;
+.viewAll:hover {
+    background: var(--gold-primary);
+    color: #000;
 }
 
+/* Impact Image */
+.impactImage {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.impactContent h2 {
+    font-size: 6rem;
+    letter-spacing: 10px;
+    z-index: 1;
+}
+
+/* Team Intro */
 .aboutWrapper {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
 .aboutContent h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.accentBar {
-  width: 60px;
-  height: 4px;
-  background: var(--gold-primary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .mainAboutText {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #fff;
-}
-
-.secondaryAboutText {
-  color: var(--text-muted);
+  font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 3rem;
+  color: var(--text-muted);
 }
 
-.marketTags {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.marketTags span {
-  padding: 0.6rem 1.5rem;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.aboutVisual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.experienceBox {
-    padding: 3rem;
-    text-align: center;
-    width: 250px;
-}
-
-.expNumber {
-    display: block;
-    font-size: 4rem;
-    font-family: var(--font-playfair);
-    color: var(--gold-primary);
-    margin-bottom: 0.5rem;
-}
-
-.expLabel {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-}
-
-/* Contact Section */
-.contactHero {
-    padding: 5rem;
-    text-align: center;
-}
-
-.contactHero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.contactHero p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 4rem;
-}
-
-.contactDetailsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-}
-
-.contactMethod {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contactMethod strong {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--gold-primary);
-}
-
-.contactLink {
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: opacity 0.3s ease;
-}
-
-.contactLink:hover {
-    opacity: 0.7;
+.aboutVisual img {
+    border: 1px solid var(--gold-primary);
 }
 
 /* Footer */
@@ -317,12 +289,13 @@
 }
 
 @media (max-width: 1024px) {
-    .contactDetailsGrid {
+    .introGrid, .aboutWrapper {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
-    .aboutWrapper {
-        grid-template-columns: 1fr;
+    .impactContent h2 {
+        font-size: 3rem;
+        letter-spacing: 5px;
     }
 }
 
@@ -333,7 +306,8 @@
   .navLinks {
     display: none;
   }
-  .contactHero {
-      padding: 3rem 1.5rem;
+  .heroCtas {
+      flex-direction: column;
+      gap: 1.5rem;
   }
 }

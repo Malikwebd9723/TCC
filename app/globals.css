@@ -25,7 +25,14 @@ body {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4 {
+main {
+  padding-top: 90px;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-playfair), serif;
   color: var(--gold-primary);
   text-transform: uppercase;
@@ -53,7 +60,8 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: var(--gold-primary); /* Fallback */
+  color: var(--gold-primary);
+  /* Fallback */
 }
 
 .gold-border {
@@ -73,8 +81,15 @@ button {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in {
