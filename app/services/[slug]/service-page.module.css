@@ -91,8 +91,8 @@
 }
 
 .menuItem:hover, .menuItemActive {
-  color: #e91e63;
-  border-left: 3px solid #e91e63;
+  color: var(--gold-primary);
+  border-left: 3px solid var(--gold-primary);
   background: #ffffff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.02);
 }
@@ -117,7 +117,7 @@
   display: inline-block;
   width: 4px;
   height: 20px;
-  background: #e91e63;
+  background: var(--gold-primary);
 }
 
 .sidebarBox p {
@@ -127,12 +127,12 @@
   margin-bottom: 1.5rem;
 }
 
-.btnPink {
+.btnGold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: #e91e63;
+  background: var(--gold-primary);
   color: #fff;
   padding: 1rem 1.5rem;
   font-weight: 600;
@@ -144,8 +144,8 @@
   width: 100%;
 }
 
-.btnPink:hover {
-  background: #d81b60;
+.btnGold:hover {
+  background: var(--gold-secondary);
 }
 
 .contactInfo {
@@ -165,7 +165,7 @@
 }
 
 .contactItem svg {
-  color: #e91e63;
+  color: var(--gold-primary);
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -227,7 +227,7 @@
 }
 
 .benefitItem svg {
-  color: #e91e63;
+  color: var(--gold-primary);
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -269,7 +269,7 @@
 .iconWrapper {
   width: 24px;
   height: 24px;
-  background: #e91e63;
+  background: var(--gold-primary);
   color: #fff;
   display: flex;
   align-items: center;

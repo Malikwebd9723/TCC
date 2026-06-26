@@ -55,6 +55,8 @@ export default function Home() {
         return "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600";
       case "hvac":
         return "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600";
+      case "residential-commercial-industrial":
+        return "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600";
       default:
         return "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600";
     }
@@ -75,12 +77,12 @@ export default function Home() {
           <div className={styles.heroOverlay}></div>
         </div>
         <div className={`container ${styles.heroContent} fade-in`}>
-          <span className={styles.heroTag}>Upstate NY Contracting & Trade Consulting</span>
+          <span className={styles.heroTag}>Residential / Commercial / Industrial</span>
           <h1>Tradecraft Consulting & Contracting</h1>
           <p className={styles.heroDescription}>
-            Danny DeSantis and the TCC team plan, manage, and execute high-standard
-            residential, commercial, and industrial work with clear communication from
-            first walkthrough to final install.
+            Sleek project planning and skilled trade execution across general contracting,
+            licensed electrical, carpentry, plumbing, sewer, water, HVAC, heat pumps,
+            and chillers.
           </p>
           <div className={styles.heroCtas}>
             <Link href="/services" className={styles.ctaPrimary}>
@@ -89,20 +91,6 @@ export default function Home() {
             <Link href="/contact" className={styles.ctaSecondary}>
               Book A Consultation
             </Link>
-          </div>
-          <div className={styles.heroProofGrid}>
-            <div className={styles.heroProofItem}>
-              <strong>General Contracting</strong>
-              <span>Project planning and field execution</span>
-            </div>
-            <div className={styles.heroProofItem}>
-              <strong>Electrical Systems</strong>
-              <span>Licensed installation and upgrades</span>
-            </div>
-            <div className={styles.heroProofItem}>
-              <strong>Custom Carpentry</strong>
-              <span>Framing, finish work, and repairs</span>
-            </div>
           </div>
         </div>
       </section>
@@ -393,12 +381,11 @@ export default function Home() {
                   <div className={styles.formGroup}>
                     <select defaultValue="" required>
                       <option value="" disabled>Select Needed Service</option>
-                      <option value="gc">General Contracting</option>
-                      <option value="electrical">Electrical Systems</option>
-                      <option value="carpentry">Carpentry & Framing</option>
-                      <option value="plumbing">Plumbing & Water</option>
-                      <option value="hvac">HVAC & Climate Control</option>
-                      <option value="consulting">Professional Consulting</option>
+                      {services.map((service) => (
+                        <option key={service.slug} value={service.slug}>
+                          {service.title}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <button type="submit" className={styles.formSubmit}>Submit Request</button>

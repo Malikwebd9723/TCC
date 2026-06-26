@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { services } from "../services-data";
 import styles from "./contact.module.css";
 
 const contactMethods = [
@@ -20,14 +21,7 @@ const contactMethods = [
   },
 ];
 
-const projectTypes = [
-  "General Contracting",
-  "Electrical Systems",
-  "Carpentry & Framing",
-  "Plumbing & Water",
-  "HVAC & Climate Control",
-  "Professional Consulting",
-];
+const projectTypes = services.map((service) => service.title);
 
 export default function ContactPage() {
   return (

@@ -79,7 +79,7 @@
   right: -50px;
   width: 150px;
   height: 150px;
-  background-color: rgba(233, 30, 99, 0.05); /* very faint pink blob */
+  background-color: rgba(197, 160, 40, 0.08);
   border-radius: 50%;
   z-index: 0;
 }
@@ -128,7 +128,7 @@
 }
 
 .readMore {
-  color: #e91e63; /* Pink color from the design */
+  color: var(--gold-primary);
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -140,7 +140,7 @@
 }
 
 .readMore:hover {
-  color: var(--gold-primary);
+  color: var(--gold-secondary);
 }
 
 
@@ -201,7 +201,7 @@
 }
 
 .statIcon {
-  color: #e91e63; /* Pinkish red icon color */
+  color: var(--gold-primary);
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
@@ -242,7 +242,7 @@
 .sectionLine {
   width: 60px;
   height: 4px;
-  background-color: #e91e63;
+  background-color: var(--gold-primary);
   margin: 0 auto;
 }
 
@@ -282,14 +282,14 @@
 }
 
 .teamInfo p {
-  color: #e91e63;
+  color: var(--gold-primary);
   font-size: 0.95rem;
   font-weight: 500;
 }
 
 /* 5. CTA Banner */
 .ctaBanner {
-  background: linear-gradient(135deg, #e91e63 0%, #7b1fa2 100%); /* gradient from mockup */
+  background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
   padding: 4rem 0;
 }
 
@@ -309,7 +309,7 @@
   display: inline-block;
   padding: 1.2rem 2.5rem;
   background-color: #fff;
-  color: #e91e63;
+  color: var(--gold-secondary);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;

@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className={styles.sidebarBox}>
               <h3>Brochure Download</h3>
               <p>Please click download button for getting brochure file</p>
-              <a href="#" className={styles.btnPink}>
+              <a href="#" className={styles.btnGold}>
                 DOWNLOAD PDF
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -92,7 +92,7 @@ export default async function ServicePage({ params }: PageProps) {
                   <span>example@gmail.com</span>
                 </div>
               </div>
-              <a href="tel:0025001234567" className={styles.btnPink}>
+              <a href="tel:0025001234567" className={styles.btnGold}>
                 CALL NOW
               </a>
             </div>

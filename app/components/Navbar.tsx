@@ -109,9 +109,6 @@ export default function Navbar() {
 
         {/* Mobile Menu Overlay */}
         <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}>
-          <button className={styles.closeBtn} onClick={toggleMobileMenu} aria-label="Close Menu">
-            &times;
-          </button>
           <div className={styles.mobileLinks}>
             <Link href="/" onClick={toggleMobileMenu}>Home</Link>
             <div className={styles.mobileSubheading}>Services</div>

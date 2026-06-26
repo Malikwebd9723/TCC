@@ -14,8 +14,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "TCC | Tradecraft Consulting & Contracting",
-  description: "Premium General Contracting, Electrical, Carpentry, and HVAC services. Residential, Commercial, and Industrial solutions by Danny DeSantis.",
-  keywords: ["General Contracting", "Electrical", "Carpentry", "Plumbing", "HVAC", "Tradecraft Consulting", "TCC", "Danny DeSantis"],
+  description: "Premium general contracting, licensed electrical, carpentry, framing, drywall, plumbing, sewer, water, HVAC, heat pump, and chiller services by Danny DeSantis.",
+  keywords: ["General Contracting", "Licensed Electrical", "Carpentry", "Framing", "Drywall", "Plumbing", "Sewer", "Water", "HVAC", "Heat Pumps", "Chillers", "Residential", "Commercial", "Industrial", "Tradecraft Consulting", "TCC", "Danny DeSantis"],
 };
 
 import Navbar from "./components/Navbar";
