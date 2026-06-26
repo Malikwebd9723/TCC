@@ -1,7 +1,7 @@
 .footer {
     background: #050505;
     padding-top: 100px;
-    border-top: 1px solid var(--accent);
+    border-top: 1px solid var(--accent-dark);
     position: relative;
     overflow: hidden;
 }
@@ -90,7 +90,7 @@
 .socialIcon {
     width: 35px;
     height: 35px;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--accent-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +106,7 @@
 }
 
 .bottomBar {
-    border-top: 1px solid var(--accent);
+    border-top: 1px solid var(--accent-dark);
     padding: 2rem 0;
 }
 

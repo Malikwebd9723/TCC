@@ -1,11 +1,17 @@
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --gold-primary: #d4af37;
-  --gold-secondary: #c5a028;
+  --background: #ffffff;
+  --background-alt: #f8f9fb;
+  --foreground: #111115;
+  --background-dark: #0b0b0d;
+  --foreground-light: #ffffff;
+  --gold-primary: #c5a028;
+  --gold-secondary: #a8831a;
   --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #c5a028 100%);
-  --accent: #1a1a1a;
-  --text-muted: #a0a0a0;
+  --accent: #f0f0f4;
+  --accent-dark: #1b1b1e;
+  --text-muted: #555560;
+  --text-muted-light: #b0b0b8;
+  --border-color: #e4e4e9;
   --max-width: 1200px;
 }
 
@@ -25,19 +31,17 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Removed global padding-top to fix gap issue */
-
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-playfair), serif;
-  color: var(--gold-primary);
+  color: inherit;
   text-transform: uppercase;
   letter-spacing: 2px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto; /* Allow hyphenation for long words like INFRASTRUCTURE */
+  hyphens: auto;
 }
 
 @media (max-width: 768px) {
@@ -49,7 +53,7 @@ h4 {
 @media (max-width: 480px) {
   h1 { font-size: 1.8rem !important; }
   h2 { font-size: 1.4rem !important; }
-  .container { padding: 0 1rem; } /* Reduce side padding slightly for more width */
+  .container { padding: 0 1rem; }
 }
 
 a {
@@ -74,7 +78,6 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: var(--gold-primary);
-  /* Fallback */
 }
 
 .gold-border {
@@ -82,14 +85,34 @@ button {
 }
 
 .glass {
-  background: rgba(26, 26, 26, 0.7);
+  background: rgba(15, 15, 15, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(197, 160, 40, 0.2);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
 }
 
 .section-padding {
   padding: 100px 0;
+}
+
+.dark-section {
+  background: var(--background-dark);
+  color: var(--foreground-light);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-muted-light {
+  color: var(--text-muted-light);
 }
 
 /* Animations */
@@ -98,7 +121,6 @@ button {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

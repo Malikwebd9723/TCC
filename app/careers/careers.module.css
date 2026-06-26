@@ -2,214 +2,472 @@
   background: var(--background);
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.navContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.logoSmall {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-playfair);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navLinks {
-  display: flex;
-  gap: 2rem;
-}
-
-.navLinks a {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.navLinks a:hover {
-  color: var(--gold-primary);
-}
-
-.hero {
+.pageHeader {
   position: relative;
-  height: 60vh;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 90px;
+  margin-top: 80px;
 }
 
-.heroBg {
+.pageHeaderBg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  inset: 0;
+  z-index: 0;
 }
 
-.heroOverlay {
+.pageHeaderOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+  inset: 0;
+  background: rgba(11, 11, 13, 0.82);
 }
 
-.heroContent h1 {
-  font-size: 4rem;
+.pageHeaderContent {
+  position: relative;
+  z-index: 1;
+  color: var(--foreground-light);
 }
 
-.subtitle {
-  font-size: 1.2rem;
+.pageHeaderContent h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
   text-transform: uppercase;
-  letter-spacing: 4px;
+}
+
+.altBg {
+  background: var(--background-alt);
+}
+
+.cultureSection {
+  background: var(--background-alt);
+}
+
+.cultureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.cultureText {
+  min-width: 0;
+}
+
+.sectionBadge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(197, 160, 40, 0.1);
+  color: var(--gold-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.sectionBadgeLight {
+  display: inline-block;
+  color: var(--gold-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.sectionTitleLeft {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.sectionTitleLeft span {
+  color: var(--gold-primary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.leadText {
   color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
 
-.benefitsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.checkmarksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem 2rem;
 }
 
-.benefitText h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.checkmarkItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.accentBar {
+.checkIcon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+.checkmarkItem h4 {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.checkmarkItem p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cultureImageWrap {
+  position: relative;
+  min-height: 520px;
+}
+
+.cultureImage {
+  position: absolute;
+  inset: 0 0 0 8%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.experienceBadge {
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.2rem;
+  box-shadow: 0 12px 30px rgba(197, 160, 40, 0.35);
+}
+
+.expNumber {
+  font-size: 2.7rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.expText {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.35;
+  margin-top: 0.4rem;
+}
+
+.openingsSection {
+  background: var(--background);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.sectionLine {
   width: 60px;
   height: 4px;
   background: var(--gold-primary);
-  margin-bottom: 2rem;
-}
-
-.benefitText p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.benefitList {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.benefitList li {
-    font-size: 0.9rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.benefitList li::before {
-    content: "→";
-    color: var(--gold-primary);
-}
-
-.benefitImage img {
-    border: 1px solid var(--gold-primary);
-}
-
-.openings h2 {
-    margin-bottom: 4rem;
-    font-size: 2.5rem;
+  margin: 0 auto;
 }
 
 .jobsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .jobCard {
-    padding: 3rem;
-    transition: transform 0.3s ease;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .jobCard:hover {
-    transform: translateY(-10px);
+  transform: translateY(-7px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.jobIcon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(197, 160, 40, 0.1);
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+}
+
+.jobIcon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.jobMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.jobMeta span {
+  color: var(--gold-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
 }
 
 .jobCard h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.meta {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--gold-primary);
+  color: var(--foreground);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .jobCard p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
 }
 
-.applyBtn {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    font-weight: bold;
+.applyLink {
+  color: var(--foreground);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease;
 }
 
-.footer {
-    padding: 3rem 0;
-    border-top: 1px solid var(--accent);
+.applyLink:hover {
+  color: var(--gold-primary);
+}
+
+.processBanner {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--background-dark);
+  background-image: url("/service-gc.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--foreground-light);
+}
+
+.processBannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 13, 0.92);
+}
+
+.processBanner :global(.container) {
+  position: relative;
+  z-index: 1;
+}
+
+.processHeader {
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.processHeader h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.processItem {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.processItem span {
+  display: inline-block;
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.processItem h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.processItem p {
+  color: var(--text-muted-light);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.ctaBanner {
+  background: var(--background-dark);
+  padding: 4rem 0;
+}
+
+.ctaContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ctaContent h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.btnCta {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 1.15rem 2.5rem;
+  background: var(--gold-primary);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btnCta:hover {
+  background: var(--gold-secondary);
 }
 
 @media (max-width: 1024px) {
-    .benefitsGrid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .benefitImage img {
-        width: 100% !important;
-        height: auto !important;
-    }
+  .cultureGrid,
+  .jobsGrid,
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cultureGrid {
+    gap: 3rem;
+  }
+
+  .cultureImageWrap {
+    min-height: 460px;
+  }
+
+  .cultureImage {
+    left: 0;
+  }
+
+  .experienceBadge {
+    left: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .heroContent h1 {
-        font-size: 2.8rem;
-    }
-    .benefitText h2, .openings h2 {
-        font-size: 2rem;
-    }
-    .jobCard {
-        padding: 2rem;
-    }
-    .jobsGrid {
-        grid-template-columns: 1fr;
-    }
+  .pageHeaderContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .sectionTitleLeft,
+  .sectionTitle,
+  .processHeader h2 {
+    font-size: 2rem;
+  }
+
+  .checkmarksGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cultureImageWrap {
+    min-height: 340px;
+  }
+
+  .experienceBadge {
+    width: 120px;
+    height: 120px;
+    left: 1rem;
+    bottom: 1rem;
+  }
+
+  .expNumber {
+    font-size: 2rem;
+  }
+
+  .jobCard,
+  .processItem {
+    padding: 2rem;
+  }
+
+  .ctaContent {
+    flex-direction: column;
+    text-align: center;
+  }
 }

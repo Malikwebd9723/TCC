@@ -2,165 +2,374 @@
   background: var(--background);
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.navContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.logoSmall {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-playfair);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navLinks {
-  display: flex;
-  gap: 2rem;
-}
-
-.navLinks a {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.navLinks a:hover {
-  color: var(--gold-primary);
-}
-
-.hero {
+/* 1. Header Banner */
+.pageHeader {
   position: relative;
-  height: 60vh;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 90px;
+  margin-top: 80px; /* offset for fixed navbar */
 }
 
-.heroBg {
+.pageHeaderBg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
-.heroOverlay {
+.pageHeaderOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+  background: rgba(11, 11, 13, 0.85); /* dark overlay to match image */
 }
 
-.heroContent h1 {
-  font-size: 4rem;
+.pageHeaderContent {
+  position: relative;
+  z-index: 1;
+  color: var(--foreground-light);
 }
 
-.subtitle {
-  font-size: 1.2rem;
+.pageHeaderContent h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  color: var(--text-muted);
+}
+
+/* 2. Services Grid */
+.servicesSection {
+  background-color: var(--background-alt);
+  padding: 6rem 0;
 }
 
 .servicesGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
 }
 
-.serviceBlock {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 4rem;
-    padding: 3rem;
-    align-items: center;
+.serviceCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.serviceImage img {
-    border: 1px solid var(--gold-primary);
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-.iconHdr {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+.serviceCard::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(233, 30, 99, 0.05); /* very faint pink blob */
+  border-radius: 50%;
+  z-index: 0;
 }
 
-.iconCol {
-    width: 40px;
-    height: 40px;
-    color: var(--gold-primary);
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(197, 160, 40, 0.05); /* faint gold blob */
+  border-radius: 50%;
+  z-index: 0;
 }
 
-.serviceInfo h2 {
-    font-size: 2rem;
+.serviceContent {
+  position: relative;
+  z-index: 1;
 }
 
-.serviceInfo p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
+.serviceIcon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem auto;
+  color: #333;
 }
 
-.serviceCta {
-    padding: 0.8rem 2rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    transition: background 0.3s ease;
+.serviceIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
-.serviceCta:hover {
-    background: var(--gold-primary);
-    color: #000;
+.serviceCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
-.footer {
-    padding: 3rem 0;
-    border-top: 1px solid var(--accent);
+.serviceCard p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
+.readMore {
+  color: #e91e63; /* Pink color from the design */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.readMore:hover {
+  color: var(--gold-primary);
+}
+
+
+/* 3. Dark Stats Banner */
+.statsBanner {
+  position: relative;
+  background-color: var(--background-dark);
+  color: var(--foreground-light);
+  padding: 6rem 0;
+  background-image: url('https://images.unsplash.com/photo-1541888087405-2495bb39a2fb?q=80&w=1200'); /* Adding subtle texture */
+  background-size: cover;
+  background-position: center;
+}
+
+.statsBannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 11, 13, 0.95);
+}
+
+.statsBanner :global(.container) {
+  position: relative;
+  z-index: 1;
+}
+
+.statsBannerHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionBadgeLight {
+  display: inline-block;
+  color: #ccc;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.statsCounterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.statBox {
+  padding: 2rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.statBox:last-child {
+  border-right: none;
+}
+
+.statIcon {
+  color: #e91e63; /* Pinkish red icon color */
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.statBox h3 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.statBox p {
+  color: #aaa;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 4. Meet Our Team Section */
+.teamSection {
+  background-color: var(--background);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.sectionLine {
+  width: 60px;
+  height: 4px;
+  background-color: #e91e63;
+  margin: 0 auto;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.teamCard {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-10px);
+}
+
+.teamPhoto {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.teamInfo {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.teamInfo h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.teamInfo p {
+  color: #e91e63;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* 5. CTA Banner */
+.ctaBanner {
+  background: linear-gradient(135deg, #e91e63 0%, #7b1fa2 100%); /* gradient from mockup */
+  padding: 4rem 0;
+}
+
+.ctaContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ctaContent h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btnCta {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background-color: #fff;
+  color: #e91e63;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btnCta:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-    .serviceBlock {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
-    }
-    .serviceImage img {
-        width: 100% !important;
-        height: auto !important;
-    }
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsCounterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statBox:nth-child(2) {
+    border-right: none;
+  }
+  .statBox {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .statBox:nth-child(3), .statBox:nth-child(4) {
+    border-bottom: none;
+  }
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-    .heroContent h1 {
-        font-size: 2.8rem;
-    }
-    .serviceInfo h2 {
-        font-size: 1.8rem;
-    }
+  .pageHeaderContent h1 {
+    font-size: 2.5rem;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .statsCounterGrid {
+    grid-template-columns: 1fr;
+  }
+  .statBox {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .statBox:last-child {
+    border-bottom: none;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  .ctaContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
 }

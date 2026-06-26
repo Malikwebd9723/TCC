@@ -2,202 +2,423 @@
   background: var(--background);
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.navContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.logoSmall {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-playfair);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navLinks {
-  display: flex;
-  gap: 2rem;
-}
-
-.navLinks a {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.navLinks a:hover {
-  color: var(--gold-primary);
-}
-
-.hero {
+/* 1. Header Banner */
+.pageHeader {
   position: relative;
-  height: 60vh;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 90px;
+  margin-top: 80px; /* offset for fixed navbar */
 }
 
-.heroBg {
+.pageHeaderBg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
-.heroOverlay {
+.pageHeaderOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+  background: rgba(11, 11, 13, 0.85); /* dark overlay to match image */
 }
 
-.heroContent h1 {
-  font-size: 4rem;
+.pageHeaderContent {
+  position: relative;
+  z-index: 1;
+  color: var(--foreground-light);
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-}
-
-.historyGrid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.historyText h2 {
-  font-size: 2.5rem;
+.pageHeaderContent h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.accentBar {
+/* 2. Who We Are / About Section */
+.altBg {
+  background-color: var(--background-alt);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sectionBadge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(197, 160, 40, 0.1);
+  color: var(--gold-primary);
+  font-weight: 600;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.sectionBadgeLight {
+  display: inline-block;
+  color: #ccc;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.sectionTitleLeft {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.sectionTitleLeft span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.aboutLead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.checkmarksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checkmarkItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--gold-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.checkmarkItem h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--foreground);
+}
+
+.checkmarkItem p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.aboutCollage {
+  position: relative;
+  height: 600px;
+}
+
+.collageMain {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.collageSecondary {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 55%;
+  height: 45%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 8px solid var(--background-alt);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.experienceBadge {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  background-color: var(--gold-primary);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(197, 160, 40, 0.4);
+  z-index: 3;
+}
+
+.expNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.expText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* 3. Dark Stats Banner */
+.statsBanner {
+  position: relative;
+  background-color: var(--background-dark);
+  color: var(--foreground-light);
+  padding: 6rem 0;
+  background-image: url('https://images.unsplash.com/photo-1541888087405-2495bb39a2fb?q=80&w=1200'); /* Adding subtle texture */
+  background-size: cover;
+  background-position: center;
+}
+
+.statsBannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 11, 13, 0.95);
+}
+
+.statsBanner :global(.container) {
+  position: relative;
+  z-index: 1;
+}
+
+.statsBannerHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.statsCounterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.statBox {
+  padding: 2rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.statBox:last-child {
+  border-right: none;
+}
+
+.statIcon {
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.statBox h3 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.statBox p {
+  color: #aaa;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 4. Meet Our Team Section */
+.teamSection {
+  background-color: var(--background);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.sectionLine {
   width: 60px;
   height: 4px;
-  background: var(--gold-primary);
-  margin-bottom: 2rem;
+  background-color: var(--gold-primary);
+  margin: 0 auto;
 }
 
-.historyText p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
 
-.values {
-  padding: 3rem;
+.teamCard {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-.values h3 {
-  margin-bottom: 2rem;
+.teamCard:hover {
+  transform: translateY(-10px);
 }
 
-.values ul {
-  list-style: none;
+.teamPhoto {
+  position: relative;
+  width: 100%;
+  height: 320px;
 }
 
-.values li {
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  color: var(--text-muted);
+.teamInfo {
+  padding: 1.5rem;
+  text-align: center;
 }
 
-.values li strong {
-  display: block;
+.teamInfo h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.teamInfo p {
   color: var(--gold-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* 5. CTA Banner */
+.ctaBanner {
+  background-color: var(--background-dark);
+  padding: 4rem 0;
+}
+
+.ctaContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ctaContent h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btnCta {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background-color: var(--gold-primary);
+  color: #fff;
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-.founderSection {
-    background: #050505;
-    padding: 100px 0;
+.btnCta:hover {
+  background-color: var(--gold-secondary);
 }
 
-.founderCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.founderImage img {
-    border: 1px solid var(--gold-primary);
-    padding: 10px;
-}
-
-.founderText h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.founderText h3 {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.founderText p {
-    font-size: 1.4rem;
-    font-style: italic;
-    line-height: 1.6;
-    color: #fff;
-}
-
-.footer {
-    padding: 3rem 0;
-    border-top: 1px solid var(--accent);
-}
-
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-    .historyGrid, .founderCard {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .founderImage img {
-        width: 100% !important;
-        height: auto !important;
-    }
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .aboutCollage {
+    height: 500px;
+    margin-top: 2rem;
+  }
+  .statsCounterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statBox:nth-child(2) {
+    border-right: none;
+  }
+  .statBox {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .statBox:nth-child(3), .statBox:nth-child(4) {
+    border-bottom: none;
+  }
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-    .heroContent h1 {
-        font-size: 2.8rem;
-    }
-    .historyText h2, .founderText h2 {
-        font-size: 2rem;
-    }
-    .founderText p {
-        font-size: 1.1rem;
-    }
-    .values {
-        padding: 2rem;
-    }
+  .pageHeaderContent h1 {
+    font-size: 2.5rem;
+  }
+  .sectionTitleLeft, .sectionTitle {
+    font-size: 2rem;
+  }
+  .statsCounterGrid {
+    grid-template-columns: 1fr;
+  }
+  .statBox {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .statBox:last-child {
+    border-bottom: none;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  .ctaContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
 }
