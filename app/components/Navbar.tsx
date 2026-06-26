@@ -81,7 +81,7 @@ export default function Navbar() {
               <Link href="/services" className={pathname.startsWith("/services") ? styles.active : ""}>
                 Services <span className={styles.chevron}>▾</span>
               </Link>
-              <div className={`${styles.dropdownContent} glass-light`}>
+              <div className={styles.dropdownContent}>
                 {services.map((service) => (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
                     {service.title}

@@ -164,7 +164,7 @@
     letter-spacing: 1.5px;
     color: var(--foreground);
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     transition: color 0.3s ease;
 }
 
@@ -199,10 +199,15 @@
 }
 
 .contactCta {
-    padding: 0.6rem 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    min-height: 44px;
     font-size: 0.7rem !important;
     background: transparent;
     font-weight: 700 !important;
+    border-radius: 999px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
@@ -251,6 +256,7 @@
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 1rem 0;
     border-radius: 4px;
+    background: #ffffff;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     border-top: 3px solid var(--gold-primary);
     z-index: 2200;
